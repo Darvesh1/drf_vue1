@@ -1,6 +1,21 @@
 <template>
   <div id="app">
-    {{msg}}
+
+    <table class="table">
+      <thead>
+            <th>Name</th>
+            <th>Course</th>
+            <th>Rating</th>
+      </thead>
+      <tbody>
+      <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+      </tr>
+      </tbody>
+    </table>
+
   </div>
 </template>
 
@@ -8,9 +23,9 @@
 
 export default {
   name: 'App',
-  data(){
+  data() {
     return {
-      msg: 'hello world'
+      msg: 'hello world!'
     }
   }
 }
