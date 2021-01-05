@@ -1,8 +1,15 @@
 from  django.urls import path
 
-from  .views import index
+from rest_framework import routers
+# from  .views import index
 
+from  .views import *
 
-urlpatterns = [
-    path('students/', index)
-]
+router = routers.DefaultRouter()
+router.register('students', StudentsViewSet)
+
+# urlpatterns = [
+#     path('students/', index)
+# ]
+
+urlpatterns = router.urls
