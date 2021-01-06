@@ -8,10 +8,10 @@
             <th>Rating</th>
       </thead>
       <tbody>
-      <tr>
-            <td></td>
-            <td></td>
-            <td></td>
+      <tr v-for="student in students" :key="student.id">
+            <td>{{ student.name }}</td>
+            <td>{{ student.course }}</td>
+            <td>{{ student.rating }}</td>
       </tr>
       </tbody>
     </table>
@@ -23,10 +23,14 @@
 
 export default {
   name: 'App',
-  data() {
+  data(){
     return {
-      msg: 'hello world!'
+      students: []
     }
+  },
+  async created() {
+    var response = await fetch('http://localhost:8000/api/students/');
+    this.students = await response.json();
   }
 }
 </script>
